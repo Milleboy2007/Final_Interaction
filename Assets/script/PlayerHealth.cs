@@ -21,10 +21,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
 
-        if (healthSlider != null) {
-            healthSlider.fillAmount = (float)currentHealth / maxHealth;
-        }
-
+        UpdateSlider();
         UpdateHearts();
     }
 
@@ -77,6 +74,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    void UpdateSlider()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.fillAmount = (float)currentHealth / maxHealth;
+        }
+    }
+
     void Reload() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -85,5 +90,16 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("GAME OVER : Le joueur est mort !");
         nbVie = 3;
         FindAnyObjectByType<GameManager>().GameOver();
+    }
+
+    public bool GetStateHealth()
+    {
+        return currentHealth < maxHealth && currentHealth > 0;
+    }
+
+    public void AddHealth(int amount) {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        UpdateSlider();
     }
 }

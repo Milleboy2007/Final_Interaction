@@ -12,8 +12,12 @@ public class CollectableMunitions : MonoBehaviour
 
             if (scriptAttaque != null)
             {
-                scriptAttaque.AddMunition(quantiteDonnee);
-                Destroy(gameObject);
+                if (scriptAttaque.GetStateMunition())
+                {
+                    scriptAttaque.AddMunition(quantiteDonnee);
+                    Destroy(gameObject);
+                }
+                else Debug.Log("Munition maximume atteind");
             }
         }
     }
