@@ -130,4 +130,8 @@ public class PlayerMouvement : MonoBehaviour
             animator.runtimeAnimatorController = formeActuelle.animatorController;
         }
     }
+
+    public PlayerForm GetForm() {
+        return formeActuelle;
+    }
 }

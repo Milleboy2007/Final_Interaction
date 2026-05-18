@@ -20,3 +20,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 10
   canFly: 0
+  degats: 10
+  cadenceAttaque: 0.5
+  attaqueDistante: 1
+  projectile: {fileID: 0}

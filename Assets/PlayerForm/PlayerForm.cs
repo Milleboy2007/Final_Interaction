@@ -20,4 +20,10 @@ public class PlayerForm : ScriptableObject
 
     [Header("Capacités")]
     public bool canFly;
+
+    [Header("Combat")]
+    public int degats = 10;
+    public float cadenceAttaque = 0.5f;
+    public bool attaqueDistante;
+    public GameObject projectile;
 }
