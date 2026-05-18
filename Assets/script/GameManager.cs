@@ -6,6 +6,18 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject pausePanel;
 
+    public GameObject[] quiteBTNs;
+
+    void Start()
+    {
+        #if UNITY_WEBGL
+        foreach (GameObject btn in quiteBTNs)
+        {
+            if (btn != null) btn.SetActive(false);
+        }
+        #endif
+    }
+
     public void GameOver() {
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
@@ -30,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void Quite()
     {
-
+        Debug.Log("Game Quite");
+        Application.Quit();
     }
 }
