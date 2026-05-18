@@ -9,16 +9,24 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb;
     private int degats;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = transform.right * vitesse;
+    }
+
+    void Start()
+    {
         Destroy(gameObject, tempsDeVie);
     }
 
-    public void ConfigurerDegats(int montantDegats)
+    public void ConfigurerDegats(int montantDegats, float direction)
     {
         degats = montantDegats;
+
+        rb.linearVelocity = new Vector2(direction * vitesse, 0);
+        Vector3 scale = transform.localScale;
+        scale.x = Mathf.Abs(scale.x) * direction;
+        transform.localScale = scale;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -26,7 +34,7 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Debug.Log("Ennemi touché ! Dégâts infligés : " + degats);
-            // collision.GetComponent<EnemyHealth>().PrendreDegats(degats);
+            collision.GetComponent<Enemy>().PrendreDegats(degats);
             Destroy(gameObject);
         }
 

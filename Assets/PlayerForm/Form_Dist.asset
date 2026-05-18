@@ -23,4 +23,4 @@ MonoBehaviour:
   degats: 10
   cadenceAttaque: 0.5
   attaqueDistante: 1
-  projectile: {fileID: 0}
+  projectile: {fileID: 1753933823123415267, guid: eca19e710042a3f46b906b15d7210b15, type: 3}

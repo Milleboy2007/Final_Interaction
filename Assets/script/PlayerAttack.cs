@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Transform attackPoint;
-    public LayerMask enemyLayers;
     public float rayonAttaque = 0.5f;
 
     private PlayerMouvement playerMouvement;
@@ -44,19 +43,26 @@ public class PlayerAttack : MonoBehaviour
                 GameObject nouveauProjectile = Instantiate(forme.projectile, attackPoint.position, attackPoint.rotation);
                 Projectile scriptProjectile = nouveauProjectile.GetComponent<Projectile>();
 
-                if (scriptProjectile != null) {
-                    scriptProjectile.ConfigurerDegats(forme.degats);
+                if (scriptProjectile != null)
+                {
+                    scriptProjectile.ConfigurerDegats(forme.degats, Mathf.Sign(transform.localScale.x));
                 }
             }
         }
         else
         {
-            Collider2D[] ennemisTouches = Physics2D.OverlapCircleAll(attackPoint.position, rayonAttaque, enemyLayers);
-
-            foreach (Collider2D ennemi in ennemisTouches)
+            Collider2D[] objetsTouches = Physics2D.OverlapCircleAll(attackPoint.position, rayonAttaque);
+            foreach (Collider2D objet in objetsTouches)
             {
-                Debug.Log("J'ai frappé : " + ennemi.name);
-                // ennemi.GetComponent<EnnemiScript>().PrendreDegats(forme.degats);
+                if (objet.CompareTag("Enemy"))
+                {
+                    Enemy script = objet.GetComponent<Enemy>();
+
+                    if (script != null)
+                    {
+                        script.PrendreDegats(forme.degats);
+                    }
+                }
             }
         }
     }

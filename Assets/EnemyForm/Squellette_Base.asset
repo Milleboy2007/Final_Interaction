@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe21f37afa83b54aaab6424aac1031e, type: 3}
+  m_Name: Squellette_Base
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyForm
+  nomEnnemi: Squelette de Base
+  spriteBase: {fileID: 21300000, guid: ae44d6ca9dc728943a492226b377d3f4, type: 3}
+  animatorController: {fileID: 9100000, guid: 09d00a0b1678ec64b84090711696981d, type: 2}
+  pointsDeVieMax: 30
+  vitessePatrouille: 2
+  colliderSize: {x: 0.1558347, y: 0.5914301}
+  colliderOffset: {x: 0.003483322, y: -0.08795607}
+  rayonDetection: 4
+  rayonAttaque: 1
+  degatsAttaque: 10
+  cadenceAttaque: 1.5
