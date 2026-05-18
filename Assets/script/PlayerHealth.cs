@@ -33,5 +33,6 @@ public class PlayerHealth : MonoBehaviour
     void Mourir()
     {
         Debug.Log("GAME OVER : Le joueur est mort !");
+        FindAnyObjectByType<GameManager>().GameOver();
     }
 }
