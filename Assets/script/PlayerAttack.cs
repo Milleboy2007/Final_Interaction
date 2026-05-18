@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,11 +10,15 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
 
     private float tempsProchaineAttaque = 0f;
+    public int maxMunition = 20;
+    public int currentMunitions = 5;
+    public TextMeshProUGUI texteMunitions;
 
     void Start()
     {
         playerMouvement = GetComponent<PlayerMouvement>();
         animator = GetComponent<Animator>();
+        UpdateMunitionText();
     }
 
     void Update()
@@ -30,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
                 tempsProchaineAttaque = Time.time + forme.cadenceAttaque;
             }
         }
+
+
     }
 
     void Attaquer(PlayerForm forme)
@@ -38,16 +45,21 @@ public class PlayerAttack : MonoBehaviour
 
         if (forme.attaqueDistante)
         {
-            if (forme.projectile != null)
+            if (currentMunitions > 0)
             {
-                GameObject nouveauProjectile = Instantiate(forme.projectile, attackPoint.position, attackPoint.rotation);
-                Projectile scriptProjectile = nouveauProjectile.GetComponent<Projectile>();
-
-                if (scriptProjectile != null)
+                if (forme.projectile != null)
                 {
-                    scriptProjectile.ConfigurerDegats(forme.degats, Mathf.Sign(transform.localScale.x));
-                }
-            }
+                    currentMunitions--;
+                    UpdateMunitionText();
+                    GameObject nouveauProjectile = Instantiate(forme.projectile, attackPoint.position, attackPoint.rotation);
+                    Projectile scriptProjectile = nouveauProjectile.GetComponent<Projectile>();
+
+                    if (scriptProjectile != null)
+                    {
+                        scriptProjectile.ConfigurerDegats(forme.degats, Mathf.Sign(transform.localScale.x));
+                    }
+                } else Debug.Log("Projectil Null");
+            } else Debug.Log("A court de munition!");
         }
         else
         {
@@ -64,6 +76,22 @@ public class PlayerAttack : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public void AddMunition(int amount) {
+        currentMunitions += amount;
+
+        if (currentMunitions > maxMunition) currentMunitions = maxMunition;
+
+        UpdateMunitionText();
+    }
+
+    void UpdateMunitionText()
+    {
+        if (texteMunitions != null)
+        {
+            texteMunitions.text = currentMunitions.ToString();
         }
     }
 
