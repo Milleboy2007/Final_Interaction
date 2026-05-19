@@ -19,6 +19,8 @@ public class PlayerMouvement : MonoBehaviour
     private float moveY;
     private bool isGrounded = true;
 
+    public GameObject effetFumeePrefab;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -104,6 +106,11 @@ public class PlayerMouvement : MonoBehaviour
     void ChangerForme(PlayerForm nouvelleForme)
     {
         formeActuelle = nouvelleForme;
+
+        if (effetFumeePrefab != null)
+        {
+            Instantiate(effetFumeePrefab, transform.position, Quaternion.identity);
+        }
 
         if (spriteRenderer != null && formeActuelle.formSprite != null)
         {

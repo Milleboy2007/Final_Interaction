@@ -186,6 +186,7 @@ MonoBehaviour:
   formeMelee: {fileID: 11400000, guid: 77f22ecd08d28b54fac7a9795a3d4ba9, type: 2}
   formeDist: {fileID: 11400000, guid: 926e46a5f00ffeb45902c7358395dbd6, type: 2}
   formeVol: {fileID: 11400000, guid: d1aa043f69dcc7c4b99409cc3eaad2b2, type: 2}
+  effetFumeePrefab: {fileID: 7233307990923037022, guid: deb96b077f5144e4182695436f895764, type: 3}
 --- !u!95 &5280539557967468981
 Animator:
   serializedVersion: 7
