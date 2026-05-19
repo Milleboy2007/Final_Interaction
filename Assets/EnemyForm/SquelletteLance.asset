@@ -15,11 +15,11 @@ MonoBehaviour:
   nomEnnemi: Squellette Lance
   spriteBase: {fileID: 21300000, guid: f28e5060b1c87274280e20a11304db5a, type: 3}
   animatorController: {fileID: 9100000, guid: 59ad4859489f01e458a250f18c43401e, type: 2}
-  pointsDeVieMax: 30
+  pointsDeVieMax: 100
   vitessePatrouille: 2
   colliderSize: {x: 0.1711324, y: 0.6118714}
   colliderOffset: {x: 0.02037422, y: -0.07871872}
   rayonDetection: 6
   rayonAttaque: 1.5
-  degatsAttaque: 10
+  degatsAttaque: 15
   cadenceAttaque: 1.5

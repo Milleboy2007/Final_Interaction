@@ -97,7 +97,7 @@ public class PlayerAttack : MonoBehaviour
 
     public bool GetStateMunition()
     {
-        return currentMunitions < maxMunition && currentMunitions > 0;
+        return currentMunitions < maxMunition && currentMunitions >= 0;
     }
 
     void OnDrawGizmosSelected()

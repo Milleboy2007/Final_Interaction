@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe21f37afa83b54aaab6424aac1031e, type: 3}
+  m_Name: MafiaEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyForm
+  nomEnnemi: Mafia Enemy
+  spriteBase: {fileID: -6188768998144020764, guid: d59d74435117c344fa6444ffdcce7033, type: 3}
+  animatorController: {fileID: 9100000, guid: eeb547ae74913724681cd3544bdfff65, type: 2}
+  pointsDeVieMax: 50
+  vitessePatrouille: 2
+  colliderSize: {x: 0.25, y: 0.69}
+  colliderOffset: {x: 0, y: 0.01}
+  rayonDetection: 6
+  rayonAttaque: 1.2
+  degatsAttaque: 20
+  cadenceAttaque: 1
+  isBoss: 0

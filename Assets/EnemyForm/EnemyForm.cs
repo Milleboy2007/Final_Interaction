@@ -21,4 +21,7 @@ public class EnemyForm : ScriptableObject
     public float rayonAttaque = 1.2f;
     public int degatsAttaque = 10;
     public float cadenceAttaque = 1.5f;
+
+    [Header("Paramètres de Boss")]
+    public bool isBoss = false;
 }

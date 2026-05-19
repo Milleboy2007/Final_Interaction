@@ -15,11 +15,12 @@ MonoBehaviour:
   nomEnnemi: Lezard (Boss)
   spriteBase: {fileID: -4470171510910085312, guid: 74dccc9d879392448a80ad471a9aeec5, type: 3}
   animatorController: {fileID: 9100000, guid: 44534053f66fb8c43b7d3cd0730b83e0, type: 2}
-  pointsDeVieMax: 30
+  pointsDeVieMax: 150
   vitessePatrouille: 2
   colliderSize: {x: 1.126079, y: 3.076248}
   colliderOffset: {x: -0.05904055, y: 0.02270788}
   rayonDetection: 6
-  rayonAttaque: 1.2
-  degatsAttaque: 10
+  rayonAttaque: 2
+  degatsAttaque: 20
   cadenceAttaque: 1.5
+  isBoss: 1

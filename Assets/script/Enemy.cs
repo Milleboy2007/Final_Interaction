@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
 
     private Transform player;
 
+    public GameObject panelVictoire;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -121,6 +123,13 @@ public class Enemy : MonoBehaviour
             FaireDemiTour();
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Wall"))
+        {
+            FaireDemiTour();
+        }
+    }
 
     void FaireDemiTour()
     {
@@ -153,6 +162,19 @@ public class Enemy : MonoBehaviour
         
         if (animator != null) animator.SetTrigger("Die");
         Debug.Log(forme.nomEnnemi + " a été vaincu !");
+
+        if (forme.isBoss)
+        {
+            Debug.Log("LE BOSS EST MORT ! Victoire !");
+
+            if (panelVictoire != null)
+            {
+                panelVictoire.SetActive(true);
+            }
+
+            Time.timeScale = 0f; 
+        }
+
         Destroy(gameObject, 10f);
     }
 

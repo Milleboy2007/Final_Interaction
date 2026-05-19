@@ -17,6 +17,10 @@ MonoBehaviour:
   colliderSize: {x: 0.24, y: 0.18}
   colliderOffset: {x: 0, y: 0}
   animatorController: {fileID: 9100000, guid: 7383384ca4012c949b7a48f686e440cc, type: 2}
-  speed: 5
+  speed: 10
   jumpForce: 10
   canFly: 1
+  degats: 5
+  cadenceAttaque: 0.5
+  attaqueDistante: 0
+  projectile: {fileID: 0}

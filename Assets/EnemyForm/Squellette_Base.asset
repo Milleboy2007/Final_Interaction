@@ -15,7 +15,7 @@ MonoBehaviour:
   nomEnnemi: Squelette de Base
   spriteBase: {fileID: 21300000, guid: ae44d6ca9dc728943a492226b377d3f4, type: 3}
   animatorController: {fileID: 9100000, guid: 09d00a0b1678ec64b84090711696981d, type: 2}
-  pointsDeVieMax: 30
+  pointsDeVieMax: 50
   vitessePatrouille: 2
   colliderSize: {x: 0.1558347, y: 0.5914301}
   colliderOffset: {x: 0.003483322, y: -0.08795607}
