@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy"))
         {
             FaireDemiTour();
         }
@@ -138,12 +138,10 @@ public class Enemy : MonoBehaviour
         pointsDeVieActuels -= degats;
         Debug.Log(forme.nomEnnemi + " prend " + degats + " dégâts ! PV restants : " + pointsDeVieActuels);
 
-        if (animator != null) animator.SetTrigger("Hurt");
-
         if (pointsDeVieActuels <= 0)
         {
             Mourir();
-        }
+        } else if (animator != null) animator.SetTrigger("Hurt");
     }
 
     void Mourir()
